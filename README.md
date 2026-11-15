@@ -53,8 +53,8 @@ pip install -r requirements.txt
 The scripts are deterministic and use only the files in `data/`; nothing is downloaded.
 Re-running them reproduces `outputs/results.json` and `outputs/gain_of_capital.csv` and
 writes the four figures (`figures/`), which are generated locally and not tracked. A GitHub
-Actions workflow re-runs the pipeline on every push and once a month and fails if either output file differs
-from the committed one.
+Actions workflow re-runs the pipeline on every push and once a month and fails if a stored result is not reproduced
+(see "How the check works").
 
 | Script | What it produces | Where it appears |
 |---|---|---|
@@ -93,23 +93,32 @@ to SPY.
 
 ## How the check works
 
+```bash
+python3 check_outputs.py    # reruns ./run_all.sh, then compares
+```
+
 1. `outputs/results.json` and `outputs/gain_of_capital.csv` are stored in this repository exactly as they were when the
    article's numbers were taken from them.
-2. `./run_all.sh` reruns every script on the files in `data/` and overwrites those files with
-   freshly computed ones.
-3. `git diff --exit-code -- outputs/results.json outputs/gain_of_capital.csv` then compares each fresh file with the
-   stored version, character by character. If nothing is printed, they are identical; any
-   difference is listed and counts as a failure.
+2. `check_outputs.py` sets the stored copies aside, reruns `./run_all.sh` on the files in `data/`,
+   and compares the fresh files with the stored ones, number by number.
+3. A number counts as reproduced if it agrees with the stored one to nine significant digits
+   (relative tolerance 1e-9). Text, labels and whole numbers must match exactly. Any other
+   difference is listed and the check fails.
 
-The workflow behind the badge does exactly these three steps on a new machine with the pinned
-package versions, on every push and once a month, so a green badge means the stored
-files still follow from the data and code. The stored files are also frozen in the Zenodo
-archive, which cannot be altered after release.
+Why a tolerance and not a character-by-character match: the last digits of a floating-point
+result depend on the processor and on the build of the numerical libraries, so two correct runs
+on different machines can differ in the 12th to 16th significant digit. The check reports
+how many numbers differed in this way and by how much. For the same reason, a value printed with
+a fixed number of decimals may differ by one unit in its last printed place; such cases are listed.
 
-Two limits. The comparison is between regenerated and stored files, not with the article's
+The workflow behind the badge runs the pipeline on a new machine with the pinned package
+versions, on every push and once a month, and applies the same comparison. The stored results
+are also frozen in the Zenodo archive, which cannot be altered after release.
+
+Two limits. The comparison is between regenerated and stored results, not with the article's
 PDF: to connect the two, use the script table above, which says where each output appears in
-the article. And the figures and LaTeX table bodies are written locally from the same values but are
-not stored here, so they are not part of the comparison.
+the article. And the figures and LaTeX table bodies are written locally from the same values but are not
+stored here, so they are not part of the comparison.
 
 ## Data and licensing
 
