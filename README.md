@@ -1,10 +1,12 @@
 # Beyond Discount Rates: A Valuation Framework for Unpriced Systematic Risk
 
+[![Zenodo](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.24243060-007ec6)](https://doi.org/10.5281/zenodo.24243060)
 [![SSRN](https://img.shields.io/badge/SSRN-10.2139%2Fssrn.5180040-1f4e79)](https://doi.org/10.2139/ssrn.5180040)
 [![replication](https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml/badge.svg)](https://github.com/apapadogiannis/beyond-discount-rates/actions/workflows/replicate.yml)
 
 Replication package for the article by Agisilaos Papadogiannis, forthcoming in *The Journal of Investing* (2027).
 Title and abstract: `paper/abstract.pdf`; also on SSRN: [doi:10.2139/ssrn.5180040](https://doi.org/10.2139/ssrn.5180040).
+Archived on Zenodo: [doi:10.5281/zenodo.24243060](https://doi.org/10.5281/zenodo.24243060) (v1.0).
 The article is copyright PMR and its text is not distributed here; this repository holds the code and the data behind its figures and empirical exhibits, so that every reported number can be reproduced.
 
 ## What this is
@@ -106,6 +108,11 @@ Code: MIT License. `outputs/results.json` and `outputs/gain_of_capital.csv`: CC 
 > Papadogiannis, A. (2027). "Beyond discount rates: A valuation framework for unpriced
 > systematic risk." *The Journal of Investing*, forthcoming.
 > SSRN: https://doi.org/10.2139/ssrn.5180040
+
+Code and data:
+
+> Papadogiannis, A. (2026). "Beyond discount rates: A valuation framework for unpriced systematic risk. Replication package." Zenodo.
+> https://doi.org/10.5281/zenodo.24243060
 
 ## Disclaimer
 
