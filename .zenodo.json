@@ -1,0 +1,32 @@
+{
+  "title": "Beyond discount rates: A valuation framework for unpriced systematic risk: replication package",
+  "upload_type": "software",
+  "description": "Replication package for the article forthcoming in The Journal of Investing. Code and input data that reproduce the article's figures and empirical exhibits: the annual cost of capital assigned to SPY, QQQ and IWM, the realized and implied gain of capital at rolling horizons of 6, 12, 24 and 36 months from 2000 to 2023, the exact proportionality of the two price-based proxies, the three analytical figures, and a numerical check of the closed-form results. The article text is copyright PMR and is not included. Third-party input data remain the property of their sources and are included for replication only; the code is MIT-licensed.",
+  "creators": [
+    {
+      "name": "Papadogiannis, Agisilaos",
+      "orcid": "0009-0002-7753-7052"
+    }
+  ],
+  "keywords": [
+    "DCF valuation",
+    "gain of capital",
+    "cost of capital",
+    "expectation bias",
+    "asset pricing",
+    "valuation anomalies"
+  ],
+  "license": "MIT",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/apapadogiannis/beyond-discount-rates",
+      "scheme": "url"
+    },
+    {
+      "relation": "isSupplementTo",
+      "identifier": "10.2139/ssrn.5180040",
+      "scheme": "doi"
+    }
+  ]
+}

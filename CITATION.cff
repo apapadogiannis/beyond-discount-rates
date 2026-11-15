@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this replication package, please cite the article as below."
+title: "Beyond discount rates: A valuation framework for unpriced systematic risk. Replication package"
+authors:
+  - family-names: Papadogiannis
+    given-names: Agisilaos
+    orcid: "https://orcid.org/0009-0002-7753-7052"
+date-released: 2026-11-15
+version: "1.0"
+license: MIT
+repository-code: "https://github.com/apapadogiannis/beyond-discount-rates"
+preferred-citation:
+  type: article
+  title: "Beyond discount rates: A valuation framework for unpriced systematic risk"
+  authors:
+    - family-names: Papadogiannis
+      given-names: Agisilaos
+  journal: "The Journal of Investing"
+  year: 2027
+  status: in-press
+  url: "https://doi.org/10.2139/ssrn.5180040"
