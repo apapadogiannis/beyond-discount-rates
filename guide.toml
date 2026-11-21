@@ -28,6 +28,11 @@ files = [
   "paper/abstract.pdf: the title and abstract of the article. The full text is at the publisher.",
 ]
 read = [
+  "Units: `cost_of_capital_pct` is in per cent a year. Every gain of capital (mean, std, min, max, and the two columns of gain_of_capital.csv) is a fraction of the starting price over the whole horizon: 0.05 is 5 percentage points. Shares, autocorrelations and ratios are plain numbers.",
+  "A start month such as 2008-02 means the price at the end of that month. `months` in Exhibit 10 is the number of monthly returns, one less than the number of month-end prices.",
+  "`std` is the sample standard deviation. `autocorrelation_lag1` is between a gain and the gain that starts one month later, on the overlapping series. The package gives no count of independent observations; the number of non-overlapping windows is the observations divided by the horizon in months.",
+  "A realized gain can be below -1: it is the price ratio less the compounded cost of capital, so a large loss over a long horizon gives, for example, -1.003.",
+  "The proportionality of the implied to the realized gain is exact in the computation. In gain_of_capital.csv both are rounded to six decimals, so their ratio there matches only to about four decimals.",
   "The gain of capital is defined against the fund's own average return over the same sample. Its mean is therefore close to zero by construction; the article's findings are about its size, persistence and sign regimes, not its average.",
   "A gain is dated by its start month and covers the following h months. `last_start_month` is therefore earlier than the end of the sample by the horizon.",
   "Gains are over the whole horizon and are not annualised. A 36-month gain and a 6-month gain are not on the same scale.",
@@ -41,3 +46,9 @@ not_for = [
   "The cost of capital of these funds in general. The figure here is the sample's own average return, used as the benchmark the gain is measured against.",
   "The article's argument or wording. This package holds its numbers, not its text.",
 ]
+
+[fields]
+"sample" = "first and last month-end price used, and the horizons in months"
+"exhibit10_cost_of_capital" = "by fund: the index it tracks, its own first and last month, `months`, and `cost_of_capital_pct`, its geometric mean annual return over that sample, in per cent"
+"exhibit11_realized_gain" = "by horizon (6m, 12m, 24m, 36m), then by fund: `observations`, the number of start months; `first_start_month`, `last_start_month`; `mean`, `std`, `min`, `max` of the realized gain, as fractions, with the start months of the minimum and maximum; `share_abs_above_20pp`, the share of start months with a gain above 0.20 in absolute value; `share_positive`, overall and for start months in 2000 to 2002 and in 2010 to 2018; `autocorrelation_lag1`; `sign_changes`, the number of times the gain changes sign from one start month to the next. Each horizon also has `dispersion`, the standard deviation of QQQ and of IWM over that of SPY"
+"proposition6_proportionality" = "`observations`, the number of fund, horizon and start-month cases checked; `max_abs_deviation_below_1e-12`, true if implied gain equals realized gain divided by the compounded cost of capital in every case; `implied_over_realized`, that ratio by fund and horizon"

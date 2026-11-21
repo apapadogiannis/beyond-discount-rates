@@ -29,7 +29,13 @@
     "cite_as": "Papadogiannis, A. (2027). Beyond discount rates: A valuation framework for unpriced systematic risk. The Journal of Investing, forthcoming. https://doi.org/10.2139/ssrn.5180040",
     "cite_package": "Papadogiannis, A. (2026). Beyond discount rates: A valuation framework for unpriced systematic risk. Replication package, version 1.1.0. Zenodo. https://doi.org/10.5281/zenodo.24243060",
     "describe_as": "Papadogiannis (2027, forthcoming), \"Beyond discount rates: A valuation framework for unpriced systematic risk\", The Journal of Investing, with its replication package.",
-    "guide": "llms.txt"
+    "guide": "llms.txt",
+    "fields": {
+      "sample": "first and last month-end price used, and the horizons in months",
+      "exhibit10_cost_of_capital": "by fund: the index it tracks, its own first and last month, `months`, and `cost_of_capital_pct`, its geometric mean annual return over that sample, in per cent",
+      "exhibit11_realized_gain": "by horizon (6m, 12m, 24m, 36m), then by fund: `observations`, the number of start months; `first_start_month`, `last_start_month`; `mean`, `std`, `min`, `max` of the realized gain, as fractions, with the start months of the minimum and maximum; `share_abs_above_20pp`, the share of start months with a gain above 0.20 in absolute value; `share_positive`, overall and for start months in 2000 to 2002 and in 2010 to 2018; `autocorrelation_lag1`; `sign_changes`, the number of times the gain changes sign from one start month to the next. Each horizon also has `dispersion`, the standard deviation of QQQ and of IWM over that of SPY",
+      "proposition6_proportionality": "`observations`, the number of fund, horizon and start-month cases checked; `max_abs_deviation_below_1e-12`, true if implied gain equals realized gain divided by the compounded cost of capital in every case; `implied_over_realized`, that ratio by fund and horizon"
+    }
   },
   "sample": {
     "first_month": "2000-01",
