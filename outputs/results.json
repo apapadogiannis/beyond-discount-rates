@@ -9,8 +9,8 @@
     "status": "forthcoming article",
     "article": {
       "journal": "The Journal of Investing",
-      "year": 2027,
-      "status": "forthcoming"
+      "status": "forthcoming",
+      "year": 2027
     },
     "preprint": "https://doi.org/10.2139/ssrn.5180040",
     "repository": "https://github.com/apapadogiannis/beyond-discount-rates",
