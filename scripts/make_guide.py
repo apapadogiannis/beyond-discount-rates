@@ -129,6 +129,7 @@ def main():
                     "code": "MIT", "third_party_data": g["third_party"]},
         "cite_as": cite, "cite_package": cite_package, "describe_as": g["describe_as"],
         "guide": "llms.txt",
+        **({"fields": g["fields"]} if g.get("fields") else {}),     # what each key of the results means
     }
     path = os.path.join(OUT, "results.json")
     with open(path, encoding="utf-8") as f:
@@ -192,6 +193,8 @@ def main():
         *(["## Labels of the checks", "",
            "The checks keep the audit script's short labels. What the recurring words and prefixes mean:", "",
            *[item(f"{k}: {v}") for k, v in glossary.items()], ""] if glossary else []),
+        *(["## Fields of outputs/results.json", "", *[item(f"`{k}`: {v}") for k, v in g["fields"].items()], ""]
+          if g.get("fields") else []),
         "## Files", "", *[item(t) for t in files], "",
         f"Raw files: {raw}<path>, for example {raw}outputs/results.json", "",
         "## How to read the figures", "", *[item(t) for t in g["read"]], "",
