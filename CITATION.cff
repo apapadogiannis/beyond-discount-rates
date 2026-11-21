@@ -5,10 +5,12 @@ authors:
   - family-names: Papadogiannis
     given-names: Agisilaos
     orcid: "https://orcid.org/0009-0002-7753-7052"
-date-released: 2026-11-15
-version: "1.0"
+date-released: 2026-11-21
+version: "1.1.0"
 doi: "10.5281/zenodo.24243060"
-license: MIT
+license:
+  - MIT
+  - CC-BY-4.0
 repository-code: "https://github.com/apapadogiannis/beyond-discount-rates"
 preferred-citation:
   type: article

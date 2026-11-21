@@ -1,0 +1,43 @@
+# The statements of llms.txt and of the header of outputs/results.json that are specific to this
+# package. scripts/make_guide.py combines them with CITATION.cff and the results. No number of the
+# article is written here.
+
+ssrn = "10.2139/ssrn.5180040"
+data_as_of = "Month-end prices from the end of January 2000 to the end of December 2023, as downloaded on 27 March 2025."
+units = "cost_of_capital_pct is in per cent a year. The gain of capital (mean, std, min, max, and the columns of gain_of_capital.csv) is a fraction of the starting price over the whole horizon, not annualised: 0.05 is 5 percentage points. Shares, autocorrelations and ratios are plain numbers between 0 and 1 or around 1."
+describe_as = "Papadogiannis (2027, forthcoming), \"Beyond discount rates: A valuation framework for unpriced systematic risk\", The Journal of Investing, with its replication package."
+what = "Code and data behind the empirical exhibits of an article that splits an asset's expected return into a cost of capital and a gain of capital, the part that comes from misjudged future cash flows. For three US equity index funds (SPY, QQQ, IWM), 2000 to 2023, it holds the cost of capital of each and the realized and implied gain of capital at four horizons. The article's text is the publisher's and is not included."
+third_party = "The prices are monthly adjusted closing prices from Yahoo Finance. They remain the property of their source, are included for replication with attribution, and are not covered by the licence above."
+results_file = "every number behind Exhibits 10 and 11 and the statements made about them, under keys named after the exhibits: `sample`, `exhibit10_cost_of_capital` (by fund), `exhibit11_realized_gain` (by horizon, then by fund, with a `dispersion` entry per horizon), `proposition6_proportionality`."
+
+coverage = [
+  "Exhibit 10: the annual cost of capital of SPY, QQQ and IWM, the geometric mean return of each over its own sample.",
+  "Exhibit 11: the realized gain of capital at horizons of 6, 12, 24 and 36 months, for every start month, with summary statistics by fund and horizon.",
+  "Equation 21 and Proposition 6: the implied gain of capital and its exact proportionality to the realized gain, checked on every observation.",
+  "A numerical check of the article's closed-form results on 100,000 random parameter draws (scripts/check_identities.py).",
+  "Exhibits 1 to 3 and 7 to 9 of the article are tables and a flow diagram and have no code or data here.",
+]
+adds = [
+  "The price file is stored as downloaded. Yahoo rescales its adjusted prices after every distribution, so a later download gives different levels and, through rounding, slightly different returns. The article's numbers are those of this file.",
+  "The definitions are fixed and stated: with month-end prices P, an annual cost of capital c and a horizon of h months, C = (1+c)^(h/12); realized gain = P_T/P_t - C; implied gain = realized gain / C. The cost of capital of a fund is its own geometric mean return over the sample.",
+  "outputs/gain_of_capital.csv gives both gains for every fund, horizon and start month, so any statistic of the article can be recomputed from the series and not only read from the summary.",
+]
+files = [
+  "outputs/gain_of_capital.csv: columns date (the start month), ticker, horizon_months, g_realized, g_implied.",
+  "data/etf_adjclose_monthly.csv: the prices. data/README.md gives source, retrieval date and terms. The row dated the first of a month holds the adjusted close at the end of that month.",
+  "paper/abstract.pdf: the title and abstract of the article. The full text is at the publisher.",
+]
+read = [
+  "The gain of capital is defined against the fund's own average return over the same sample. Its mean is therefore close to zero by construction; the article's findings are about its size, persistence and sign regimes, not its average.",
+  "A gain is dated by its start month and covers the following h months. `last_start_month` is therefore earlier than the end of the sample by the horizon.",
+  "Gains are over the whole horizon and are not annualised. A 36-month gain and a 6-month gain are not on the same scale.",
+  "`share_abs_above_20pp` is the share of start months in which the gain exceeds 20 percentage points in absolute value. `dispersion` is the standard deviation of QQQ or IWM over that of SPY at the same horizon.",
+  "Observations at one horizon overlap, so they are strongly autocorrelated and are not independent draws.",
+  "IWM starts in May 2000, so its sample is shorter than that of SPY and QQQ.",
+]
+not_for = [
+  "A forecast of returns, or a signal to buy or sell. The realized gain is known only after the horizon has passed.",
+  "Anything after December 2023. The package is a fixed record and is not updated.",
+  "The cost of capital of these funds in general. The figure here is the sample's own average return, used as the benchmark the gain is measured against.",
+  "The article's argument or wording. This package holds its numbers, not its text.",
+]

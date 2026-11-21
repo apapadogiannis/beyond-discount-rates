@@ -1,289 +1,321 @@
 {
- "sample": {
-  "first_month": "2000-01",
-  "last_month": "2023-12",
-  "horizons_months": [
-   6,
-   12,
-   24,
-   36
-  ]
- },
- "exhibit10_cost_of_capital": {
-  "SPY": {
-   "index": "S&P 500",
-   "first_month": "2000-01",
-   "last_month": "2023-12",
-   "months": 287,
-   "cost_of_capital_pct": 7.18
+  "package": {
+    "title": "Beyond discount rates: A valuation framework for unpriced systematic risk",
+    "author": {
+      "name": "Agisilaos Papadogiannis",
+      "orcid": "https://orcid.org/0009-0002-7753-7052",
+      "url": "https://github.com/apapadogiannis"
+    },
+    "status": "forthcoming article",
+    "article": {
+      "journal": "The Journal of Investing",
+      "year": 2027,
+      "status": "forthcoming"
+    },
+    "preprint": "https://doi.org/10.2139/ssrn.5180040",
+    "repository": "https://github.com/apapadogiannis/beyond-discount-rates",
+    "archive": "https://doi.org/10.5281/zenodo.24243060",
+    "version": "1.1.0",
+    "released": "2026-11-21",
+    "data_as_of": "Month-end prices from the end of January 2000 to the end of December 2023, as downloaded on 27 March 2025.",
+    "units": "cost_of_capital_pct is in per cent a year. The gain of capital (mean, std, min, max, and the columns of gain_of_capital.csv) is a fraction of the starting price over the whole horizon, not annualised: 0.05 is 5 percentage points. Shares, autocorrelations and ratios are plain numbers between 0 and 1 or around 1.",
+    "licence": {
+      "results": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "condition": "Reuse of the results is allowed with credit to the paper.",
+      "code": "MIT",
+      "third_party_data": "The prices are monthly adjusted closing prices from Yahoo Finance. They remain the property of their source, are included for replication with attribution, and are not covered by the licence above."
+    },
+    "cite_as": "Papadogiannis, A. (2027). Beyond discount rates: A valuation framework for unpriced systematic risk. The Journal of Investing, forthcoming. https://doi.org/10.2139/ssrn.5180040",
+    "cite_package": "Papadogiannis, A. (2026). Beyond discount rates: A valuation framework for unpriced systematic risk. Replication package, version 1.1.0. Zenodo. https://doi.org/10.5281/zenodo.24243060",
+    "describe_as": "Papadogiannis (2027, forthcoming), \"Beyond discount rates: A valuation framework for unpriced systematic risk\", The Journal of Investing, with its replication package.",
+    "guide": "llms.txt"
   },
-  "QQQ": {
-   "index": "NASDAQ-100",
-   "first_month": "2000-01",
-   "last_month": "2023-12",
-   "months": 287,
-   "cost_of_capital_pct": 7.25
+  "sample": {
+    "first_month": "2000-01",
+    "last_month": "2023-12",
+    "horizons_months": [
+      6,
+      12,
+      24,
+      36
+    ]
   },
-  "IWM": {
-   "index": "Russell 2000",
-   "first_month": "2000-05",
-   "last_month": "2023-12",
-   "months": 283,
-   "cost_of_capital_pct": 7.69
+  "exhibit10_cost_of_capital": {
+    "SPY": {
+      "index": "S&P 500",
+      "first_month": "2000-01",
+      "last_month": "2023-12",
+      "months": 287,
+      "cost_of_capital_pct": 7.18
+    },
+    "QQQ": {
+      "index": "NASDAQ-100",
+      "first_month": "2000-01",
+      "last_month": "2023-12",
+      "months": 287,
+      "cost_of_capital_pct": 7.25
+    },
+    "IWM": {
+      "index": "Russell 2000",
+      "first_month": "2000-05",
+      "last_month": "2023-12",
+      "months": 283,
+      "cost_of_capital_pct": 7.69
+    }
+  },
+  "exhibit11_realized_gain": {
+    "6m": {
+      "SPY": {
+        "observations": 282,
+        "first_start_month": "2000-01",
+        "last_start_month": "2023-06",
+        "mean": 0.0052,
+        "std": 0.1124,
+        "min": -0.4532,
+        "min_start_month": "2008-08",
+        "max": 0.3684,
+        "max_start_month": "2009-02",
+        "share_abs_above_20pp": 0.0709,
+        "share_positive": 0.5816,
+        "share_positive_starts_2000_2002": 0.1667,
+        "share_positive_starts_2010_2018": 0.6944,
+        "autocorrelation_lag1": 0.8264,
+        "sign_changes": 49
+      },
+      "QQQ": {
+        "observations": 282,
+        "first_start_month": "2000-01",
+        "last_start_month": "2023-06",
+        "mean": 0.0128,
+        "std": 0.1667,
+        "min": -0.5945,
+        "min_start_month": "2000-09",
+        "max": 0.4293,
+        "max_start_month": "2020-03",
+        "share_abs_above_20pp": 0.1773,
+        "share_positive": 0.6454,
+        "share_positive_starts_2000_2002": 0.1667,
+        "share_positive_starts_2010_2018": 0.7685,
+        "autocorrelation_lag1": 0.8567,
+        "sign_changes": 39
+      },
+      "IWM": {
+        "observations": 278,
+        "first_start_month": "2000-05",
+        "last_start_month": "2023-06",
+        "mean": 0.0077,
+        "std": 0.1453,
+        "min": -0.5026,
+        "min_start_month": "2008-08",
+        "max": 0.4475,
+        "max_start_month": "2020-09",
+        "share_abs_above_20pp": 0.1367,
+        "share_positive": 0.5288,
+        "share_positive_starts_2000_2002": 0.25,
+        "share_positive_starts_2010_2018": 0.6111,
+        "autocorrelation_lag1": 0.821,
+        "sign_changes": 47
+      },
+      "dispersion": {
+        "QQQ_over_SPY": 1.4831,
+        "IWM_over_SPY": 1.2927
+      }
+    },
+    "12m": {
+      "SPY": {
+        "observations": 276,
+        "first_start_month": "2000-01",
+        "last_start_month": "2022-12",
+        "mean": 0.0118,
+        "std": 0.1701,
+        "min": -0.5061,
+        "min_start_month": "2008-02",
+        "max": 0.4945,
+        "max_start_month": "2020-03",
+        "share_abs_above_20pp": 0.2174,
+        "share_positive": 0.6232,
+        "share_positive_starts_2000_2002": 0.1667,
+        "share_positive_starts_2010_2018": 0.7407,
+        "autocorrelation_lag1": 0.9213,
+        "sign_changes": 33
+      },
+      "QQQ": {
+        "observations": 276,
+        "first_start_month": "2000-01",
+        "last_start_month": "2022-12",
+        "mean": 0.0339,
+        "std": 0.2569,
+        "min": -0.746,
+        "min_start_month": "2000-09",
+        "max": 0.6131,
+        "max_start_month": "2020-03",
+        "share_abs_above_20pp": 0.4348,
+        "share_positive": 0.6268,
+        "share_positive_starts_2000_2002": 0.1944,
+        "share_positive_starts_2010_2018": 0.8056,
+        "autocorrelation_lag1": 0.9379,
+        "sign_changes": 35
+      },
+      "IWM": {
+        "observations": 272,
+        "first_start_month": "2000-05",
+        "last_start_month": "2022-12",
+        "mean": 0.0175,
+        "std": 0.2123,
+        "min": -0.4997,
+        "min_start_month": "2008-02",
+        "max": 0.8809,
+        "max_start_month": "2020-03",
+        "share_abs_above_20pp": 0.2904,
+        "share_positive": 0.5257,
+        "share_positive_starts_2000_2002": 0.2188,
+        "share_positive_starts_2010_2018": 0.5926,
+        "autocorrelation_lag1": 0.9062,
+        "sign_changes": 37
+      },
+      "dispersion": {
+        "QQQ_over_SPY": 1.5103,
+        "IWM_over_SPY": 1.2481
+      }
+    },
+    "24m": {
+      "SPY": {
+        "observations": 264,
+        "first_start_month": "2000-01",
+        "last_start_month": "2021-12",
+        "mean": 0.0358,
+        "std": 0.2497,
+        "min": -0.6017,
+        "min_start_month": "2007-02",
+        "max": 0.7301,
+        "max_start_month": "2009-02",
+        "share_abs_above_20pp": 0.4091,
+        "share_positive": 0.6515,
+        "share_positive_starts_2000_2002": 0.1944,
+        "share_positive_starts_2010_2018": 0.8611,
+        "autocorrelation_lag1": 0.9555,
+        "sign_changes": 14
+      },
+      "QQQ": {
+        "observations": 264,
+        "first_start_month": "2000-01",
+        "last_start_month": "2021-12",
+        "mean": 0.1047,
+        "std": 0.3664,
+        "min": -0.9191,
+        "min_start_month": "2000-08",
+        "max": 0.9794,
+        "max_start_month": "2009-02",
+        "share_abs_above_20pp": 0.5568,
+        "share_positive": 0.6818,
+        "share_positive_starts_2000_2002": 0.2222,
+        "share_positive_starts_2010_2018": 0.9907,
+        "autocorrelation_lag1": 0.9604,
+        "sign_changes": 18
+      },
+      "IWM": {
+        "observations": 260,
+        "first_start_month": "2000-05",
+        "last_start_month": "2021-12",
+        "mean": 0.0375,
+        "std": 0.2813,
+        "min": -0.6507,
+        "min_start_month": "2007-02",
+        "max": 0.9969,
+        "max_start_month": "2009-02",
+        "share_abs_above_20pp": 0.5038,
+        "share_positive": 0.5923,
+        "share_positive_starts_2000_2002": 0.4688,
+        "share_positive_starts_2010_2018": 0.6296,
+        "autocorrelation_lag1": 0.9325,
+        "sign_changes": 30
+      },
+      "dispersion": {
+        "QQQ_over_SPY": 1.4674,
+        "IWM_over_SPY": 1.1266
+      }
+    },
+    "36m": {
+      "SPY": {
+        "observations": 252,
+        "first_start_month": "2000-01",
+        "last_start_month": "2020-12",
+        "mean": 0.0767,
+        "std": 0.2974,
+        "min": -0.6455,
+        "min_start_month": "2000-03",
+        "max": 0.7722,
+        "max_start_month": "2018-12",
+        "share_abs_above_20pp": 0.5714,
+        "share_positive": 0.7103,
+        "share_positive_starts_2000_2002": 0.1944,
+        "share_positive_starts_2010_2018": 0.9907,
+        "autocorrelation_lag1": 0.9577,
+        "sign_changes": 7
+      },
+      "QQQ": {
+        "observations": 252,
+        "first_start_month": "2000-01",
+        "last_start_month": "2020-12",
+        "mean": 0.2102,
+        "std": 0.4306,
+        "min": -1.0031,
+        "min_start_month": "2000-03",
+        "max": 1.3982,
+        "max_start_month": "2018-12",
+        "share_abs_above_20pp": 0.7698,
+        "share_positive": 0.7262,
+        "share_positive_starts_2000_2002": 0.2222,
+        "share_positive_starts_2010_2018": 1.0,
+        "autocorrelation_lag1": 0.9592,
+        "sign_changes": 15
+      },
+      "IWM": {
+        "observations": 248,
+        "first_start_month": "2000-05",
+        "last_start_month": "2020-12",
+        "mean": 0.0733,
+        "std": 0.2872,
+        "min": -0.6898,
+        "min_start_month": "2006-02",
+        "max": 0.9378,
+        "max_start_month": "2003-03",
+        "share_abs_above_20pp": 0.4798,
+        "share_positive": 0.625,
+        "share_positive_starts_2000_2002": 0.5625,
+        "share_positive_starts_2010_2018": 0.7593,
+        "autocorrelation_lag1": 0.9237,
+        "sign_changes": 34
+      },
+      "dispersion": {
+        "QQQ_over_SPY": 1.4479,
+        "IWM_over_SPY": 0.9657
+      }
+    }
+  },
+  "proposition6_proportionality": {
+    "observations": 3206,
+    "max_abs_deviation_below_1e-12": true,
+    "implied_over_realized": {
+      "SPY": {
+        "6m": 0.9659,
+        "12m": 0.933,
+        "24m": 0.8705,
+        "36m": 0.8121
+      },
+      "QQQ": {
+        "6m": 0.9656,
+        "12m": 0.9324,
+        "24m": 0.8694,
+        "36m": 0.8106
+      },
+      "IWM": {
+        "6m": 0.9636,
+        "12m": 0.9286,
+        "24m": 0.8623,
+        "36m": 0.8007
+      }
+    }
   }
- },
- "exhibit11_realized_gain": {
-  "6m": {
-   "SPY": {
-    "observations": 282,
-    "first_start_month": "2000-01",
-    "last_start_month": "2023-06",
-    "mean": 0.0052,
-    "std": 0.1124,
-    "min": -0.4532,
-    "min_start_month": "2008-08",
-    "max": 0.3684,
-    "max_start_month": "2009-02",
-    "share_abs_above_20pp": 0.0709,
-    "share_positive": 0.5816,
-    "share_positive_starts_2000_2002": 0.1667,
-    "share_positive_starts_2010_2018": 0.6944,
-    "autocorrelation_lag1": 0.8264,
-    "sign_changes": 49
-   },
-   "QQQ": {
-    "observations": 282,
-    "first_start_month": "2000-01",
-    "last_start_month": "2023-06",
-    "mean": 0.0128,
-    "std": 0.1667,
-    "min": -0.5945,
-    "min_start_month": "2000-09",
-    "max": 0.4293,
-    "max_start_month": "2020-03",
-    "share_abs_above_20pp": 0.1773,
-    "share_positive": 0.6454,
-    "share_positive_starts_2000_2002": 0.1667,
-    "share_positive_starts_2010_2018": 0.7685,
-    "autocorrelation_lag1": 0.8567,
-    "sign_changes": 39
-   },
-   "IWM": {
-    "observations": 278,
-    "first_start_month": "2000-05",
-    "last_start_month": "2023-06",
-    "mean": 0.0077,
-    "std": 0.1453,
-    "min": -0.5026,
-    "min_start_month": "2008-08",
-    "max": 0.4475,
-    "max_start_month": "2020-09",
-    "share_abs_above_20pp": 0.1367,
-    "share_positive": 0.5288,
-    "share_positive_starts_2000_2002": 0.25,
-    "share_positive_starts_2010_2018": 0.6111,
-    "autocorrelation_lag1": 0.821,
-    "sign_changes": 47
-   },
-   "dispersion": {
-    "QQQ_over_SPY": 1.4831,
-    "IWM_over_SPY": 1.2927
-   }
-  },
-  "12m": {
-   "SPY": {
-    "observations": 276,
-    "first_start_month": "2000-01",
-    "last_start_month": "2022-12",
-    "mean": 0.0118,
-    "std": 0.1701,
-    "min": -0.5061,
-    "min_start_month": "2008-02",
-    "max": 0.4945,
-    "max_start_month": "2020-03",
-    "share_abs_above_20pp": 0.2174,
-    "share_positive": 0.6232,
-    "share_positive_starts_2000_2002": 0.1667,
-    "share_positive_starts_2010_2018": 0.7407,
-    "autocorrelation_lag1": 0.9213,
-    "sign_changes": 33
-   },
-   "QQQ": {
-    "observations": 276,
-    "first_start_month": "2000-01",
-    "last_start_month": "2022-12",
-    "mean": 0.0339,
-    "std": 0.2569,
-    "min": -0.746,
-    "min_start_month": "2000-09",
-    "max": 0.6131,
-    "max_start_month": "2020-03",
-    "share_abs_above_20pp": 0.4348,
-    "share_positive": 0.6268,
-    "share_positive_starts_2000_2002": 0.1944,
-    "share_positive_starts_2010_2018": 0.8056,
-    "autocorrelation_lag1": 0.9379,
-    "sign_changes": 35
-   },
-   "IWM": {
-    "observations": 272,
-    "first_start_month": "2000-05",
-    "last_start_month": "2022-12",
-    "mean": 0.0175,
-    "std": 0.2123,
-    "min": -0.4997,
-    "min_start_month": "2008-02",
-    "max": 0.8809,
-    "max_start_month": "2020-03",
-    "share_abs_above_20pp": 0.2904,
-    "share_positive": 0.5257,
-    "share_positive_starts_2000_2002": 0.2188,
-    "share_positive_starts_2010_2018": 0.5926,
-    "autocorrelation_lag1": 0.9062,
-    "sign_changes": 37
-   },
-   "dispersion": {
-    "QQQ_over_SPY": 1.5103,
-    "IWM_over_SPY": 1.2481
-   }
-  },
-  "24m": {
-   "SPY": {
-    "observations": 264,
-    "first_start_month": "2000-01",
-    "last_start_month": "2021-12",
-    "mean": 0.0358,
-    "std": 0.2497,
-    "min": -0.6017,
-    "min_start_month": "2007-02",
-    "max": 0.7301,
-    "max_start_month": "2009-02",
-    "share_abs_above_20pp": 0.4091,
-    "share_positive": 0.6515,
-    "share_positive_starts_2000_2002": 0.1944,
-    "share_positive_starts_2010_2018": 0.8611,
-    "autocorrelation_lag1": 0.9555,
-    "sign_changes": 14
-   },
-   "QQQ": {
-    "observations": 264,
-    "first_start_month": "2000-01",
-    "last_start_month": "2021-12",
-    "mean": 0.1047,
-    "std": 0.3664,
-    "min": -0.9191,
-    "min_start_month": "2000-08",
-    "max": 0.9794,
-    "max_start_month": "2009-02",
-    "share_abs_above_20pp": 0.5568,
-    "share_positive": 0.6818,
-    "share_positive_starts_2000_2002": 0.2222,
-    "share_positive_starts_2010_2018": 0.9907,
-    "autocorrelation_lag1": 0.9604,
-    "sign_changes": 18
-   },
-   "IWM": {
-    "observations": 260,
-    "first_start_month": "2000-05",
-    "last_start_month": "2021-12",
-    "mean": 0.0375,
-    "std": 0.2813,
-    "min": -0.6507,
-    "min_start_month": "2007-02",
-    "max": 0.9969,
-    "max_start_month": "2009-02",
-    "share_abs_above_20pp": 0.5038,
-    "share_positive": 0.5923,
-    "share_positive_starts_2000_2002": 0.4688,
-    "share_positive_starts_2010_2018": 0.6296,
-    "autocorrelation_lag1": 0.9325,
-    "sign_changes": 30
-   },
-   "dispersion": {
-    "QQQ_over_SPY": 1.4674,
-    "IWM_over_SPY": 1.1266
-   }
-  },
-  "36m": {
-   "SPY": {
-    "observations": 252,
-    "first_start_month": "2000-01",
-    "last_start_month": "2020-12",
-    "mean": 0.0767,
-    "std": 0.2974,
-    "min": -0.6455,
-    "min_start_month": "2000-03",
-    "max": 0.7722,
-    "max_start_month": "2018-12",
-    "share_abs_above_20pp": 0.5714,
-    "share_positive": 0.7103,
-    "share_positive_starts_2000_2002": 0.1944,
-    "share_positive_starts_2010_2018": 0.9907,
-    "autocorrelation_lag1": 0.9577,
-    "sign_changes": 7
-   },
-   "QQQ": {
-    "observations": 252,
-    "first_start_month": "2000-01",
-    "last_start_month": "2020-12",
-    "mean": 0.2102,
-    "std": 0.4306,
-    "min": -1.0031,
-    "min_start_month": "2000-03",
-    "max": 1.3982,
-    "max_start_month": "2018-12",
-    "share_abs_above_20pp": 0.7698,
-    "share_positive": 0.7262,
-    "share_positive_starts_2000_2002": 0.2222,
-    "share_positive_starts_2010_2018": 1.0,
-    "autocorrelation_lag1": 0.9592,
-    "sign_changes": 15
-   },
-   "IWM": {
-    "observations": 248,
-    "first_start_month": "2000-05",
-    "last_start_month": "2020-12",
-    "mean": 0.0733,
-    "std": 0.2872,
-    "min": -0.6898,
-    "min_start_month": "2006-02",
-    "max": 0.9378,
-    "max_start_month": "2003-03",
-    "share_abs_above_20pp": 0.4798,
-    "share_positive": 0.625,
-    "share_positive_starts_2000_2002": 0.5625,
-    "share_positive_starts_2010_2018": 0.7593,
-    "autocorrelation_lag1": 0.9237,
-    "sign_changes": 34
-   },
-   "dispersion": {
-    "QQQ_over_SPY": 1.4479,
-    "IWM_over_SPY": 0.9657
-   }
-  }
- },
- "proposition6_proportionality": {
-  "observations": 3206,
-  "max_abs_deviation_below_1e-12": true,
-  "implied_over_realized": {
-   "SPY": {
-    "6m": 0.9659,
-    "12m": 0.933,
-    "24m": 0.8705,
-    "36m": 0.8121
-   },
-   "QQQ": {
-    "6m": 0.9656,
-    "12m": 0.9324,
-    "24m": 0.8694,
-    "36m": 0.8106
-   },
-   "IWM": {
-    "6m": 0.9636,
-    "12m": 0.9286,
-    "24m": 0.8623,
-    "36m": 0.8007
-   }
-  }
- }
 }
